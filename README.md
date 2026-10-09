@@ -1,18 +1,15 @@
-# Tourip - App Turista (Ionic) v0.0.1
+Tourip - App Turista primera entrega.
 
-Esqueleto de la entrega 1. Ionic 9 + Angular (standalone) + Capacitor.
-
-## Correr
+Corremos con:
     npm install
     ionic serve
-
-## Estructura (src/app)
+Estructura:
 - `paginas/`      inicio, mapa, explorar, plan, perfil, acceso, detalle-lugar
 - `componentes/`  tarjeta-lugar, item-plan
 - `servicios/`    lugares, viaje, auth, ubicacion, notificaciones
 - `modelos/`      lugar, plan, usuario, resena
 
-## Estado
+Estado:
 - Datos en memoria (mock), todavia sin Firebase.
 - Mantenedor: Plan (crear, listar, editar con version, borrar).
 - Pendiente: Firebase, mapa (Leaflet), GPS, guardados, resenas, filtros, guards, estilos.
