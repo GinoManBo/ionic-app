@@ -1,0 +1,10 @@
+<ion-item [routerLink]="['/lugar', lugar().id]">
+  <ion-label>
+    <h2>{{ lugar().nombre }}</h2>
+    <p>{{ lugar().categoria }} · {{ lugar().duracionMin }} min</p>
+  </ion-label>
+  <ion-note slot="end">{{ lugar().precio ? '$' + lugar().precio : 'Gratis' }}</ion-note>
+  <ion-button slot="end" fill="clear" size="small" (click)="$event.stopPropagation(); guardar.emit(lugar())">
+    Guardar
+  </ion-button>
+</ion-item>

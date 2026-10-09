@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>{{ auth.usuario?.correo ?? 'Sin sesion' }}</p>
+  <ion-button (click)="salir()">Cerrar sesion</ion-button>
+</ion-content>

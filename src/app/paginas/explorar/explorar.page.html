@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Explorar</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar lugar" (ionInput)="buscar($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (lista$ | async; as lista) {
+    @if (lista.length === 0) {
+      <p>No hay resultados.</p>
+    }
+    <ion-list>
+      @for (l of lista; track l.id) {
+        <app-tarjeta-lugar [lugar]="l" (guardar)="guardar($event)"></app-tarjeta-lugar>
+      }
+    </ion-list>
+  } @else {
+    <ion-spinner></ion-spinner>
+  }
+</ion-content>

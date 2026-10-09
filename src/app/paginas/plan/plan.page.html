@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Plan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- TODO: separar por dias, guardados (favoritos), solicitudes de tour -->
+  @if (cargando) {
+    <ion-spinner></ion-spinner>
+  } @else if (error) {
+    <p>{{ error }}</p>
+    <ion-button (click)="cargar()">Reintentar</ion-button>
+  } @else if (actividades.length === 0) {
+    <p>Tu plan esta vacio.</p>
+  } @else {
+    <ion-list>
+      @for (a of actividades; track a.id) {
+        <app-item-plan [actividad]="a" (editar)="editar($event)" (eliminar)="borrar($event)"></app-item-plan>
+      }
+    </ion-list>
+  }
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="nueva()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

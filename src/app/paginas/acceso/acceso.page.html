@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tourip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input label="Correo" type="email" [(ngModel)]="correo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Clave" type="password" [(ngModel)]="clave"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="entrar()">Entrar</ion-button>
+  <!-- TODO: registro, login con Google, recuperar clave, elegir intereses -->
+</ion-content>

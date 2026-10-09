@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (lugar$ | async; as l) {
+    <h2>{{ l.nombre }}</h2>
+    <p>{{ l.descripcion }}</p>
+    <p>Horario: {{ l.horario }}</p>
+    <p>Precio: {{ l.precio ? '$' + l.precio : 'Gratis' }}</p>
+    <!-- TODO: galeria de fotos, mapa, resenas, boton agregar al plan -->
+  } @else {
+    <ion-spinner></ion-spinner>
+  }
+</ion-content>
